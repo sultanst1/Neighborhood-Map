@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+</head>
+
+<body>
+ <div id="container">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div>
+                <input placeholder="Search" data-bind="value: search, valueUpdate: 'afterkeydown'" />
+                <ul data-bind="foreach: filteredLocation">
+                    <li data-bind="text: title, click:$parent.toggleMarker">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="map"></div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+
+
+<script src="js/knockout.js"></script>
+    <script src="js/map.js"></script>
+    <script src='js/jquery-3.2.1.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_CSSW--62m1kldiMuASEwIo0OA0id_hc&v=3&callback=initMap" onerror="googleError()">
+    </script>
+</body>
+
+</html>
